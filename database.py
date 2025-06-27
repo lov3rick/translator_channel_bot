@@ -1,5 +1,3 @@
-"""SQLite-обёртка (init и простые запросы)."""
-
 import aiosqlite
 from config import DB_PATH
 
