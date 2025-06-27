@@ -1,7 +1,3 @@
-"""
-Мелкие утилиты для работы с HTML-текстом.
-"""
-
 import html as html_lib
 from bs4 import BeautifulSoup
 
