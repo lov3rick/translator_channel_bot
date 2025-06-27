@@ -81,8 +81,8 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/opt/translator_channel_bot
-ExecStart=/opt/translator_channel_bot/venv/bin/python /opt/translator_channel_bot/bot.py
+WorkingDirectory=/root/translator_channel_bot
+ExecStart=/root/translator_channel_bot/venv/bin/python /root/translator_channel_bot/bot.py
 Restart=always
 
 [Install]
