@@ -1,12 +1,7 @@
-"""
-HTML-translator с сохранением тегов (<b>, <i>, <a> …).
-Использует deep-translator (GoogleTranslate) + BeautifulSoup.
-"""
-
 from bs4 import BeautifulSoup, NavigableString
 from deep_translator import GoogleTranslator
 
-_ru2en = GoogleTranslator(source="ru", target="en")  # reuse 1 instance
+_ru2en = GoogleTranslator(source="ru", target="en")
 
 
 def translate_html_preserve_format(html_text: str,
@@ -20,7 +15,7 @@ def translate_html_preserve_format(html_text: str,
 
     soup = BeautifulSoup(html_text, "html.parser")
 
-    for node in soup.find_all(string=True):            # обходим текстовые узлы
+    for node in soup.find_all(string=True):
         text = str(node)
         if not text.strip():
             continue
