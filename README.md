@@ -80,7 +80,7 @@ Description=Telegram Translator Channel Bot
 After=network.target
 
 [Service]
-User=ubuntu
+User=root
 WorkingDirectory=/opt/translator_channel_bot
 ExecStart=/opt/translator_channel_bot/venv/bin/python /opt/translator_channel_bot/bot.py
 Restart=always
