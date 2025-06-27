@@ -1,4 +1,3 @@
-# ui.py
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 def ru_button(post_id: int) -> InlineKeyboardMarkup:
