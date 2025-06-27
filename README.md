@@ -1,21 +1,21 @@
 # Telegram Translator Channel Bot 🤖
 
-A simple Telegram bot for posting bilingual content to your Telegram channel with language toggle buttons.  
-Built with [aiogram 3](https://docs.aiogram.dev/en/latest/), supports text, photo, and video posts.
+A Telegram bot that lets you post bilingual (RU ↔ EN) content in your channel and switch languages with a single inline button.
+Built on aiogram 3, works with text, photos, and videos.
 
 ---
 
 ## 🚀 Features
 
-- Admin sends posts in Russian and English.
-- Bot publishes Russian version to the Telegram channel.
-- Toggle button switches between 🇷🇺 Russian and 🇬🇧 English versions.
-- Supports:
-  - Text messages
-  - Photo with caption
-  - Video with caption
-- Posts saved to SQLite database.
-- Can run as a systemd service on Ubuntu server.
+- One-step workflow – send a Russian post, the bot auto-translates it to English.
+- Preview dialog – bot shows the English draft and asks: ✅ Send • ✏️ Edit • ❌ Cancel.
+- Inline toggle – subscribers can switch between 🇷🇺 RU and 🇬🇧 EN versions in-place.
+- Rich media – supports:
+- Pure text
+- Photos with captions
+- Videos with captions
+- SQLite persistence – every post is stored locally.
+- Ready for production – run it as a systemd service on Ubuntu.
 
 ---
 
@@ -67,7 +67,7 @@ Built with [aiogram 3](https://docs.aiogram.dev/en/latest/), supports text, phot
 To run manually:
 
 ```bash
-python translator_channel_bot.py
+python bot.py
 ```
 
 To run on Ubuntu via systemd:
@@ -76,13 +76,13 @@ Create `/etc/systemd/system/translator_bot.service`:
 
 ```ini
 [Unit]
-Description=Telegram Translator Bot
+Description=Telegram Translator Channel Bot
 After=network.target
 
 [Service]
-User=your_linux_user
-WorkingDirectory=/path/to/translator_channel_bot
-ExecStart=/path/to/translator_channel_bot/venv/bin/python /path/to/translator_channel_bot/translator_channel_bot.py
+User=ubuntu
+WorkingDirectory=/opt/translator_channel_bot
+ExecStart=/opt/translator_channel_bot/venv/bin/python /opt/translator_channel_bot/bot.py
 Restart=always
 
 [Install]
@@ -93,15 +93,15 @@ Then reload and start the service:
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable translator_bot.service
-sudo systemctl start translator_bot.service
+sudo systemctl enable translator_bot
+sudo systemctl start  translator_bot
 ```
 
 ---
 
 ## 🧑‍💻 Author
 
-Made with 💬 by [@lov3rick](https://t.me/withlov3rick)
+Made with 💬 by [lov3rick](https://t.me/withlov3rick)
 
 ---
 
